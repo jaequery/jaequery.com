@@ -6,6 +6,7 @@
   height: 40vmin;
   /* animation: 3s ease 0s normal forwards 1 fadein; */
   color: white;
+  background-color: white;
 }
 
 
@@ -28,6 +29,8 @@
 .links {  
   display: flex;
   flex-direction: row;    
+  position: absolute;
+  bottom: 2em;
 }
 
 .links a {  
@@ -43,20 +46,20 @@
 
 .quote {
   font-size: 0.9em;
-  animation: 3s ease 0s normal forwards 1 fadein;
   color: #999;
 }
 
 .burger:hover { cursor: pointer; }
 
-@keyframes fadein{
+/* @keyframes fadein{
   0% { opacity:0; }
   66% { opacity:0; }
   100% { opacity:1; }
 }
 
-@-webkit-keyframes fadein{
+@keyframes slidein{
   0% { opacity:0; }
   66% { opacity:0; }
   100% { opacity:1; }
-}
+} */
+

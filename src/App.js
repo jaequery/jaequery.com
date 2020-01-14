@@ -1,38 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import logo from './illust.svg';
 import './App.css';
 
-import { Animate } from "react-simple-animate";
+import { Animated } from "react-animated-css";
+
 
 function App() {
 
-  const showMenu = () => {
-    alert("you clickedp");
-  };
+  const [quote, setQuote] = useState("Click here to start");
 
-  let quote = "hope you like what you see here"
-
-  setTimeout( () => {
-    quote = "Click here to start"
-  })
-
+  setTimeout(function () {
+    setQuote("Click here to start");
+  }, 3000);
 
   return (
     <div className="App">
       <header className="App-header">
-        <Animate 
-          play 
-          start={{ opacity: 0 }}
-          end={{ opacity: 0.3 }}
-          duration={22}
-          render={({ style }) => (
-            <h3 className="me">hello, there 👋</h3>
-          )} 
-        />
-                
-        <p className="quote ">{quote}</p>
 
-        <div className="links">
+        <Animated animationIn="fadeInDownBig" isVisible={true}>
+          <h3 className="me">hello, there <span aria-label="wave" role="img">👋</span></h3>
+        </Animated>
+
+        <Animated animationIn="slideInUp" isVisible={true}>
+          <img className="App-logo" src={logo} alt="logo" />
+          <p className="quote ">{quote}</p>
+        </Animated>
+
+        {/* <div className="links">
           <a
             className="App-link"
             href="https://github.com/jaequery"
@@ -49,7 +43,7 @@ function App() {
           >
             twitter
         </a>
-        </div>
+        </div> */}
 
       </header>
     </div>
